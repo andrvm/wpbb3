@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Wpbb3
  *
- * Plugin URI: http://andrvm.ru/wpbb3/
+ * Plugin URI: https://github.com/andrvm/wpbb3
  *
  * Description: Wordpress & phpbb3 integration
  *
