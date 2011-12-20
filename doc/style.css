@@ -1,0 +1,91 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+html {
+    font-size:100%;
+    height:100%;
+    background: #666;
+}
+
+body {
+    background:#fbfbfb;
+    color:#666;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:0.625em; /*1em==10px*/
+    line-height: 1.5;
+    margin:0 auto;
+    min-height:100%;
+    width:92em;
+    position:relative;
+    height:auto !important;
+    height:100%;
+    z-index:0;
+    padding: 2em 4em;
+}
+
+h1, h2, h3, h4, h5 {
+    padding: 1em 0;
+}
+
+a  {
+    /*text-decoration:none;*/
+}
+
+p {
+    padding:0.2em 0 0.2em 0; /* 2px */
+    font-size:1.4em;
+ }
+
+/**
+ * Вспомогательные классы
+*/
+.clearfloat {
+    clear:both;
+}
+
+.floatleft {
+    float:left;
+}
+
+.floatright {
+    float:right;
+}
+
+.overflowhidden {
+    overflow:hidden;
+}
+
+.debugred {
+    border:0.1em solid red;
+}
+
+.debuggreen {
+    border:0.1em solid green;
+}

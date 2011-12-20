@@ -1,0 +1,1481 @@
+/* General markup styles
+---------------------------------------- */
+
+div#phpbb3_body * {
+	/* Reset browsers default margin, padding and font sizes */
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+div#phpbb3_body div, div#phpbb3_body p, div#phpbb3_body th, div#phpbb3_body td, div#phpbb3_body li, div#phpbb3_body dd {
+	font-size: x-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: small
+}
+/*
+html>body, html>div, html>p, html>th, html>td, html>li, html>dd {
+	font-size: small
+}
+*//*
+html {
+	color: #536482;
+	background: #DBD7D1;
+	/* Always show a scrollbar for short pages - stops the jump when the scrollbar appears. non-ie browsers *
+	height: 100%;
+	margin-bottom: 1px;
+}*/
+
+div#phpbb3_body {
+	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	color: #536482;
+	background: #DBD7D1;
+	font-size: 62.5%;	/* This sets the default font size to be equivalent to 10px */
+	margin:40px 15px 15px 10px;
+}
+
+div#phpbb3_body img {
+	border: 0;
+}
+
+div#phpbb3_body h1 {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 1.70em;
+	font-weight: normal;
+	color: #333333;
+}
+
+div#phpbb3_body h2, div#phpbb3_body caption {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 1.40em;
+	font-weight: normal;
+	color: #115098;
+	text-align: left;
+	margin-top: 25px;
+}
+
+div#phpbb3_body h3, div#phpbb3_body h4 {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 1.20em;
+	text-decoration: none;
+	line-height: 1.20em;
+	margin-top: 25px;
+}
+
+div#phpbb3_body p {
+	margin-bottom: 0.7em;
+	line-height: 1.40em;
+	font-size: 0.90em;
+}
+
+div#phpbb3_body ul {
+	list-style: disc;
+	margin: 0 0 1em 2em;
+}
+
+div#phpbb3_body hr {
+	border: 0 none;
+	border-top: 1px dashed #999999;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	height: 1px;
+}
+
+div#phpbb3_body .small {
+	font-size: 0.85em;
+}
+
+/* General links  */
+div#phpbb3_body a:link, div#phpbb3_body a:visited {
+	color: #105289;
+	text-decoration: none;
+}
+
+div#phpbb3_body a:hover {
+	color: #BC2A4D;
+	text-decoration: underline;
+}
+
+div#phpbb3_body a:active {
+	color: #368AD2;
+	text-decoration: none;
+}
+
+div#phpbb3_body .install-body p a {
+	font-weight: bold;
+}
+
+/* List items */
+div#phpbb3_body ul, div#phpbb3_body ol {
+	list-style-position: inside;
+	margin-left: 1em;
+}
+
+div#phpbb3_body li {
+	display: list-item;
+	list-style-type: inherit;
+}
+
+/* Main blocks
+---------------------------------------- */
+div#phpbb3_body #wrap {
+	padding: 10px 0 0 0;
+	min-width: 615px;
+}
+
+div#phpbb3_body #page-header {
+	clear: both;
+	text-align: right;
+	background: url("../wpbb3/forum/adm/images/phpbb_logo.gif") top left no-repeat;
+	height: 49px;
+	font-size: 0.85em;
+	margin:10px;
+}
+
+div#phpbb3_body #page-header h1 {
+	color: #767676;
+	font-family: "Trebuchet MS",Helvetica,sans-serif;
+	font-size: 1.70em;
+	padding-top: 10px;
+}
+
+div#phpbb3_body #page-header p {
+	font-size: 1.00em;
+}
+
+div#phpbb3_body #page-header p#skip {
+	display: none;
+}
+
+div#phpbb3_body #page-body {
+	clear: both;
+	min-width: 700px;
+}
+
+div#phpbb3_body #page-footer {
+	clear: both;
+	font-size: 0.75em;
+	text-align: center;
+}
+
+div#phpbb3_body #content {
+	padding: 30px 10px 10px;
+	position: relative;
+}
+
+div#phpbb3_body #content h1 {
+	color: #115098;
+	line-height: 1.2em;
+	margin-bottom: 0;
+}
+
+div#phpbb3_body #main {
+	float: left;
+	width: 76%;
+	margin: 0 0 0 3%;
+	min-height: 350px;
+}
+
+/*
+div#phpbb3_body #main {
+	height: 350px;
+}*/
+
+div#phpbb3_body #page-body.simple-page-body {
+	padding: 0;
+	padding-right: 10px;
+	min-width: 0;
+}
+
+/* Tabbed menu
+	Based on: http://www.alistapart.com/articles/slidingdoors2/
+----------------------------------------*/
+div#phpbb3_body #tabs {
+	line-height: normal;
+	margin: 0 0 -6px 7px;
+	min-width: 600px;
+}
+
+div#phpbb3_body .rtl #tabs {
+	margin: 0 7px -6px 0;
+}
+
+div#phpbb3_body #tabs ul {
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+
+div#phpbb3_body #tabs li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: 0.85em;
+	font-weight: bold;
+}
+
+div#phpbb3_body #tabs a {
+	float: left;
+	background:url("../wpbb3/forum/adm/images/bg_tabs1.gif") no-repeat 0% -34px;
+	margin: 0 1px 0 0;
+	padding: 0 0 0 7px;
+	text-decoration: none;
+	position: relative;
+}
+
+div#phpbb3_body #tabs a span {
+	float: left;
+	display: block;
+	background: url("../wpbb3/forum/adm/images/bg_tabs2.gif") no-repeat 100% -34px;
+	padding: 7px 10px 4px 4px;
+	color: #767676;
+	white-space: nowrap;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+div#phpbb3_body #tabs a span { float:none;}
+/* End hack */
+
+div#phpbb3_body #tabs a:hover span {
+	color: #BC2A4D;
+}
+
+div#phpbb3_body #tabs #activetab a {
+	background-position: 0 0;
+	border-bottom: 1px solid #DCDEE2;
+}
+
+div#phpbb3_body #tabs #activetab a span {
+	background-position: 100% 0;
+	padding-bottom: 5px;
+	color: #23649F;
+}
+
+div#phpbb3_body #tabs a:hover {
+	background-position: 0 -69px;
+}
+
+div#phpbb3_body #tabs a:hover span {
+	background-position: 100% -69px;
+}
+
+div#phpbb3_body #tabs #activetab a:hover span {
+	color: #115098;
+}
+
+
+/* Main Panel
+---------------------------------------- */
+div#phpbb3_body #acp {
+	margin: 4px 0;
+	padding: 3px 1px;
+	min-width: 550px;
+	background-color: #FFFFFF;
+	border: 1px #999999 solid;
+}
+
+div#phpbb3_body .panel {
+	background: #F3F3F3 url("../wpbb3/forum/adm/images/innerbox_bg.gif") repeat-x top;
+	padding: 0;
+}
+
+div#phpbb3_body span.corners-top, div#phpbb3_body span.corners-bottom,
+div#phpbb3_body span.corners-top span, div#phpbb3_body span.corners-bottom span {
+	font-size: 1px;
+	line-height: 1px;
+	display: block;
+	height: 5px;
+	background-repeat: no-repeat;
+}
+
+div#phpbb3_body span.corners-top {
+	background-image: url("../wpbb3/forum/adm/images/corners_left.gif");
+	background-position: 0 0;
+	margin: -4px -2px 0;
+}
+
+div#phpbb3_body span.corners-top span {
+	background-image: url("../wpbb3/forum/adm/images/corners_right.gif");
+	background-position: 100% 0;
+}
+
+div#phpbb3_body span.corners-bottom {
+	background-image: url("../wpbb3/forum/adm/images/corners_left.gif");
+	background-position: 0 100%;
+	margin: 0 -2px -4px;
+	clear: both;
+}
+
+div#phpbb3_body span.corners-bottom span {
+	background-image: url("../wpbb3/forum/adm/images/corners_right.gif");
+	background-position: 100% 100%;
+}
+
+/* WinIE tweaks \*/
+* div#phpbb3_body span.corners-top, * div#phpbb3_body span.corners-bottom { background-image: url("../wpbb3/forum/adm/images/corners_left.gif"); }
+* div#phpbb3_body span.corners-top span, * div#phpbb3_body span.corners-bottom span { background-image: url("../wpbb3/forum/adm/images/corners_right.gif"); }
+/* End tweaks */
+
+/* Sub-navigation Menu
+---------------------------------------- */
+
+/* Toggle */
+div#phpbb3_body #toggle {
+	padding: 5px;
+	width: 5%;
+	height: 100px;
+	position: absolute;
+	left: 15%;
+	top: 28px;
+	margin-left: 2px;
+}
+
+div#phpbb3_body #toggle-handle {
+	display: block;
+	width: 18px;
+	height: 19px;
+	float: right;
+	background-image: url(../wpbb3/forum/adm/images/toggle.gif);
+}
+
+/* Menu */
+div#phpbb3_body #menu {
+	float: left;
+	width: 20%;
+	font-size: 1.00em;
+	padding: 0;
+	border-right: 1px solid #CCCFD3;
+}
+
+div#phpbb3_body #menu p {
+	font-size: 0.85em;
+}
+
+div#phpbb3_body #menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Default list state */
+div#phpbb3_body #menu li {
+	padding: 0;
+	margin: 0;
+	font-size: 0.85em;
+	font-weight: bold;
+	display: inline;
+}
+
+/* Link styles for the sub-section links */
+div#phpbb3_body #menu li span {
+	display: block;
+	padding: 3px 3px 3px 8px;
+	margin: 1px 0;
+	text-decoration: none;
+	font-weight: normal;
+	color: #138ECB;
+}
+
+div#phpbb3_body #menu li a:hover, div#phpbb3_body #menu li a:hover span {
+	text-decoration: none;
+	background-color: #FFFFFF;
+	color: #BC2A4D;
+}
+
+div#phpbb3_body #menu li a:active, div#phpbb3_body #menu li a:active span {
+	color: #F632A0;
+}
+
+div#phpbb3_body #menu li#activemenu a span {
+	text-decoration: none;
+	font-weight: bold;
+	color: #1180B7;
+	background: transparent url("../wpbb3/forum/adm/images/arrow_right.gif") 0% 50% no-repeat;
+}
+
+div#phpbb3_body #menu li#activemenu a:hover span,
+div#phpbb3_body #menu li#activemenu span {
+	text-decoration: none;
+	font-weight: bold;
+	color: #BC2A4D;
+	background: #FFFFFF url("../wpbb3/forum/adm/images/arrow_right.gif") 1% 50% no-repeat;
+}
+
+div#phpbb3_body #menu li a:active,
+div#phpbb3_body #menu li a:active span,
+div#phpbb3_body #menu li#activemenu a:active span {
+	color: #F632A0;
+}
+
+div#phpbb3_body #menu li span.completed {
+	text-decoration: none;
+	padding: 3px 3px 3px 12px;
+	background: url("../wpbb3/forum/adm/images/arrow_down.gif") 1% 50% no-repeat;
+}
+
+div#phpbb3_body #menu li.header {
+	font-family: Tahoma, Helvetica, sans-serif;
+	display: block;
+	font-weight: bold;
+	color: #115098;
+	border-bottom: 1px solid #327AA5;
+	padding: 4px 0 2px;
+	margin-top: 15px;
+	text-transform: uppercase;
+	font-size: 0.75em;
+}
+
+/* Table styles
+---------------------------------------- */
+
+div#phpbb3_body table {
+	width: 100%;
+	border: 1px solid #CCCFD3;
+	background-color: #FFFFFF;
+	padding: 1px;
+}
+
+div#phpbb3_body th {
+	padding: 3px 4px;
+	color: #FFFFFF;
+	background: #70AED3 url("../wpbb3/forum/adm/images/gradient2b.gif") bottom left repeat-x;
+	border-top: 1px solid #6DACD2;
+	border-bottom: 1px solid #327AA5;
+	text-align: left;
+	font-size: 0.75em;
+	text-transform: uppercase;
+}
+
+div#phpbb3_body td {
+	text-align: left;
+	font-size: 0.85em;
+	padding: 4px;
+	line-height: 1.20em;
+}
+
+div#phpbb3_body table.type2 {
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+div#phpbb3_body table.type2 th {
+	background: none;
+	border-top: none;
+	text-align: center;
+	color: #115098;
+	padding: 2px 0;
+}
+
+div#phpbb3_body table.type2 td {
+	padding: 0;
+	font-size: 1em;
+}
+
+div#phpbb3_body table.type2 td.name {
+	padding: 2px;
+	vertical-align: middle;
+}
+
+div#phpbb3_body table.type3  {
+	float: right;
+	width: 300px;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+}
+
+div#phpbb3_body table.type3 thead th {
+	background-color: transparent;
+	border-top: none;
+	text-align: center;
+	color: #115098;
+	padding: 0 3px;
+	font-size: 0.85em;
+	font-weight: normal;
+	text-transform: none;
+}
+
+div#phpbb3_body table.type3 tbody th {
+	border-top: none;
+	text-align: left;
+	text-transform: none;
+	padding: 0;
+	border: none;
+	font-size: 0.90em;
+	font-weight: normal;
+	width: 100%;
+}
+
+div#phpbb3_body table.type3 td {
+	text-align: center;
+	padding: 1px;
+}
+
+div#phpbb3_body th.name {
+	text-align: left;
+	width: auto;
+}
+
+div#phpbb3_body td.name {
+	text-align: left;
+	font-weight: bold;
+}
+
+div#phpbb3_body .entry {
+	text-align: left;
+	font-weight: normal;
+}
+
+div#phpbb3_body .row1 { background-color: #F9F9F9; }
+div#phpbb3_body .row2 { background-color: #DCEBFE; }
+div#phpbb3_body .row3 { background-color: #DBDFE2; }
+div#phpbb3_body .row4 { background-color: #E4E8EB; }
+div#phpbb3_body .col1 { background-color: #DCEBFE; }
+div#phpbb3_body .col2 { background-color: #F9F9F9; }
+
+div#phpbb3_body .spacer {
+	background-color: #DBDFE2;
+	height: 1px;
+	line-height: 1px;
+}
+
+/* General form styles
+----------------------------------------*/
+div#phpbb3_body fieldset {
+	margin: 15px 0;
+	padding: 10px;
+	border-top: 1px solid #D7D7D7;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 1px solid #D7D7D7;
+	background-color: #FFFFFF;
+	position: relative;
+}
+
+* div#phpbb3_body fieldset {
+	padding: 0 10px 5px 10px;
+}
+
+div#phpbb3_body fieldset p {
+	font-size: 0.85em;
+}
+
+div#phpbb3_body legend {
+	padding: 1px 0;
+	font-family: Tahoma,arial,Verdana,Sans-serif;
+	font-size: .9em;
+	font-weight: bold;
+	color: #115098;
+	margin-top: -.4em;
+	position: relative;
+	text-transform: none;
+	line-height: 1.2em;
+	top: -.2em;
+	vertical-align: middle;
+}
+
+/** div#phpbb3_body legend {
+	margin: 0 0 -10px -7px;
+	line-height: 1em;
+	font-size: .85em;
+}*/
+
+div#phpbb3_body input, div#phpbb3_body textarea {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 0.90em;
+	font-weight: normal;
+	cursor: text;
+	vertical-align: middle;
+	padding: 2px;
+	color: #111111;
+	border-left: 1px solid #AFAEAA;
+	border-top: 1px solid #AFAEAA;
+	border-right: 1px solid #D5D5C8;
+	border-bottom: 1px solid #D5D5C8;
+	background-color: #E3DFD8;
+}
+
+div#phpbb3_body input:hover, div#phpbb3_body textarea:hover {
+	border-left: 1px solid #AFAEAA;
+	border-top: 1px solid #AFAEAA;
+	border-right: 1px solid #AFAEAA;
+	border-bottom: 1px solid #AFAEAA;
+	background-color: #E9E9E2;
+}
+
+div#phpbb3_body input.langvalue, div#phpbb3_body textarea.langvalue {
+	width: 90%;
+}
+
+div#phpbb3_body optgroup, div#phpbb3_body select {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 0.85em;
+	font-weight: normal;
+	font-style: normal;
+	cursor: pointer;
+	vertical-align: middle;
+	width: auto;
+	color: #000;
+}
+
+div#phpbb3_body select {
+	height:auto;
+}
+
+div#phpbb3_body optgroup {
+	font-size: 1.00em;
+	font-weight: bold;
+}
+
+div#phpbb3_body optgroup.disabled-options {
+	display: none;
+	background-color: gray;
+}
+
+div#phpbb3_body option {
+	padding: 0 1em 0 0;
+	color: #000;
+}
+
+div#phpbb3_body option.disabled-option {
+	color: graytext;
+}
+
+div#phpbb3_body .sep {
+	font-weight: bold;
+}
+
+div#phpbb3_body .username-coloured {
+	font-weight: bold;
+}
+
+div#phpbb3_body textarea {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 0.85em;
+	width: 60%;
+	padding: 2px;
+}
+
+div#phpbb3_body label {
+	cursor: pointer;
+	font-size: 0.85em;
+	padding: 0 5px 0 0;
+}
+
+div#phpbb3_body label input {
+	font-size: 1.00em;
+	vertical-align: middle;
+}
+
+div#phpbb3_body label img {
+	vertical-align: middle;
+}
+
+div#phpbb3_body fieldset.quick, div#phpbb3_body p.quick {
+	margin: 0 0 5px;
+	padding: 5px 0 0;
+	border: none;
+	background-color: transparent;
+	text-align: right;
+}
+
+div#phpbb3_body fieldset.quick legend {
+	display: none;
+}
+
+div#phpbb3_body fieldset.tabulated {
+	background: none;
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	border: 0;
+}
+
+div#phpbb3_body fieldset.tabulated legend {
+	display: none;
+}
+
+div#phpbb3_body fieldset.nobg {
+	margin: 15px 0 0 0;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+}
+
+div#phpbb3_body fieldset.display-options {
+	margin: 15px 0 2px 0;
+	padding: 0 0 4px 0;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+	font-size: 0.75em;
+}
+
+div#phpbb3_body fieldset.display-options select,
+div#phpbb3_body fieldset.display-options input,
+div#phpbb3_body fieldset.display-options label {
+	font-size: 1.00em;
+	vertical-align: middle;
+}
+
+div#phpbb3_body select option.disabled {
+	background-color: #bbb;
+	color: #fff;
+}
+
+/* Special case inputs */
+div#phpbb3_body select#board_timezone,
+div#phpbb3_body select#full_folder_action {
+	width: 95%;
+}
+
+/* Definition list layout for forms
+	Other general def. list properties defined in prosilver_main.css
+---------------------------------------- */
+div#phpbb3_body dl {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 1.00em;
+}
+
+div#phpbb3_body dt {
+	float: left;
+	width: auto;
+}
+
+div#phpbb3_body dd { color: #666666;}
+div#phpbb3_body dd + dd { padding-top: 5px;}
+div#phpbb3_body dt span { padding: 0 5px 0 0;}
+
+div#phpbb3_body dt .explain { font-style: italic;}
+
+div#phpbb3_body dt label {
+	font-size: 1.00em;
+	text-align: left;
+	font-weight: bold;
+	color: #4A5A73;
+}
+
+div#phpbb3_body dd label {
+	font-size: 1.00em;
+	white-space: nowrap;
+	margin: 0 10px 0 0;
+	color: #4A5A73;
+}
+
+/*html>body dd label input { vertical-align: text-bottom;}	/* Tweak for Moz to align checkboxes/radio buttons nicely */
+
+div#phpbb3_body dd input {
+	font-size: 1.00em;
+	max-width: 100%;
+}
+
+div#phpbb3_body dd select {
+	font-size: 100%;
+	width: auto;
+	max-width: 100%;
+}
+
+div#phpbb3_body dd textarea {
+	font-size: 0.90em;
+	width: 90%;
+}
+
+div#phpbb3_body dd select {
+	width: auto;
+	font-size: 1.00em;
+}
+
+div#phpbb3_body fieldset dl {
+	margin-bottom: 10px;
+	font-size: 0.85em;
+}
+
+div#phpbb3_body fieldset dt {
+	width: 45%;
+	text-align: left;
+	border: none;
+	border-right: 1px solid #CCCCCC;
+	padding-top: 3px;
+}
+
+div#phpbb3_body fieldset dd {
+	margin: 0 0 0 45%;
+	padding: 0 0 0 5px;
+	border: none;
+	border-left: 1px solid #CCCCCC;
+	vertical-align: top;
+	font-size: 1.00em;
+}
+
+div#phpbb3_body dd.full {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	padding-top: 3px;
+	text-align: center;
+	width: 95%;
+}
+
+/* Hover highlights for form rows */
+div#phpbb3_body fieldset dl:hover dt,
+div#phpbb3_body fieldset dl:hover dd {
+	border-color: #666666;
+}
+
+div#phpbb3_body fieldset dl:hover dt label {
+	color: #000000;
+}
+
+div#phpbb3_body fieldset dl dd label:hover {
+	color: #BC2A4D;
+}
+
+div#phpbb3_body input:focus, div#phpbb3_body textarea:focus {
+	border: 1px solid #BC2A4D;
+	background-color: #E9E9E2;
+	color: #BC2A4D;
+}
+
+/* Submit button fieldset or paragraph
+---------------------------------------- */
+div#phpbb3_body fieldset.submit-buttons {
+	text-align: center;
+	border: none;
+	background-color: transparent;
+	margin: 0;
+	padding: 4px;
+	margin-top: -1px;
+}
+
+div#phpbb3_body p.submit-buttons {
+	text-align: center;
+	margin: 0;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+div#phpbb3_body fieldset.submit-buttons input,
+div#phpbb3_body p.submit-buttons input {
+	padding: 3px 2px;
+}
+
+div#phpbb3_body fieldset.submit-buttons legend {
+	display: none;
+}
+
+/* Input field styles
+---------------------------------------- */
+
+div#phpbb3_body input.radio, div#phpbb3_body input.permissions-checkbox {
+	width: auto !important;
+	background-color: transparent;
+	border: none;
+	cursor: default;
+}
+
+div#phpbb3_body input.full,
+div#phpbb3_body textarea.full {
+	width: 99%;
+}
+
+* div#phpbb3_body input.full, * div#phpbb3_body textarea.full { width: 95%;}
+div#phpbb3_body input.medium { width: 50%;}
+div#phpbb3_body input.narrow { width: 25%;}
+div#phpbb3_body input.tiny { width: 10%;}
+div#phpbb3_body input.autowidth { width: auto !important;}
+div#phpbb3_body .box2 .inputbox { background-color: #E9E9E9;}
+
+/* Form button styles
+---------------------------------------- */
+div#phpbb3_body a.button1, div#phpbb3_body input.button1, div#phpbb3_body input.button3,
+div#phpbb3_body a.button2, div#phpbb3_body input.button2 {
+	width: auto !important;
+	padding: 1px 3px 0 3px;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	color: #000;
+	font-size: 0.85em;
+	background: #EFEFEF url("../wpbb3/forum/adm/images/bg_button.gif") repeat-x top;
+	cursor: pointer;
+}
+
+div#phpbb3_body a.button1, div#phpbb3_body input.button1 {
+	font-weight: bold;
+	border: 1px solid #666666;
+}
+
+/* Alternative button */
+div#phpbb3_body a.button2, div#phpbb3_body input.button2 {
+	border: 1px solid #666666;
+}
+
+/* <a> button in the style of the form buttons */
+div#phpbb3_body a.button1, div#phpbb3_body a.button1:link, div#phpbb3_body a.button1:visited, div#phpbb3_body a.button1:active,
+div#phpbb3_body a.button2, div#phpbb3_body a.button2:link, div#phpbb3_body a.button2:visited, div#phpbb3_body a.button2:active {
+	text-decoration: none;
+	color: #000000;
+	padding: 4px 8px;
+}
+
+/* Hover states */
+div#phpbb3_body a.button1:hover, div#phpbb3_body input.button1:hover,
+div#phpbb3_body a.button2:hover, div#phpbb3_body input.button2:hover {
+	border: 1px solid #BC2A4D;
+	background: #EFEFEF url("../wpbb3/forum/adm/images/bg_button.gif") repeat bottom;
+	color: #BC2A4D;
+}
+
+div#phpbb3_body input.disabled {
+	font-weight: normal;
+	color: #666666;
+}
+
+/* Pagination
+---------------------------------------- */
+div#phpbb3_body .pagination {
+	height: 1%; /* IE tweak (holly hack) */
+	width: auto;
+	text-align: right;
+	margin-top: 5px;
+	font-size: 0.85em;
+	padding-bottom: 2px;
+}
+
+div#phpbb3_body .pagination strong,
+div#phpbb3_body .pagination b {
+	font-weight: normal;
+}
+
+div#phpbb3_body .pagination span.page-sep {
+	display:none;
+}
+
+div#phpbb3_body .pagination span strong {
+	padding: 0 2px;
+	margin: 0 2px;
+	font-weight: normal;
+	font-size: 0.85em;
+	color: #FFFFFF;
+	background: #4692BF;
+	border: 1px solid #4692BF;
+}
+
+div#phpbb3_body .pagination span a, div#phpbb3_body .pagination span a:link,
+div#phpbb3_body .pagination span a:visited, div#phpbb3_body .pagination span a:active {
+	font-weight: normal;
+	font-size: 0.85em;
+	text-decoration: none;
+	color: #5C758C;
+	margin: 0 2px;
+	padding: 0 2px;
+	background: #ECEDEE;
+	border: 1px solid #B4BAC0;
+}
+
+div#phpbb3_body .pagination span a:hover {
+	border-color: #368AD2;
+	background: #368AD2;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+div#phpbb3_body .pagination img {
+	vertical-align: middle;
+}
+
+
+/* Action Highlighting
+---------------------------------------- */
+div#phpbb3_body .successbox, div#phpbb3_body .errorbox {
+	padding: 8px;
+	margin: 10px 0;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+div#phpbb3_body .success {
+	color: #228822;
+}
+
+div#phpbb3_body .error {
+	color: #BC2A4D;
+}
+
+div#phpbb3_body .successbox {
+	background-color: #228822;
+}
+
+div#phpbb3_body .errorbox {
+	background-color: #BC2A4D;
+}
+
+* div#phpbb3_body .errorbox, * div#phpbb3_body .successbox { height: 1%; } /* Pixel shift fix for IE */
+
+.successbox h3, .errorbox h3 {
+	color: #FFFFFF;
+	margin: 0 0 0.5em;
+	font-size: 1.10em;
+	font-family: "Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
+}
+
+div#phpbb3_body .successbox p,
+div#phpbb3_body .errorbox p {
+	color: #FFFFFF;
+	font-size: 0.85em;
+	margin-bottom: 0;
+}
+
+div#phpbb3_body .errorbox a:link, div#phpbb3_body .errorbox a:active, div#phpbb3_body .errorbox a:visited,
+div#phpbb3_body .successbox a:link, div#phpbb3_body .successbox a:active, div#phpbb3_body .successbox a:visited {
+	color: #DBD7D1;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+div#phpbb3_body .errorbox a:hover,
+div#phpbb3_body .successbox a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+div#phpbb3_body .notice {
+	background-color: #62A5CC;
+}
+
+/* Special cases for the error page */
+div#phpbb3_body #errorpage #page-header a {
+	font-weight: bold;
+	line-height: 6em;
+}
+
+div#phpbb3_body #errorpage #content {
+	padding-top: 10px;
+}
+
+div#phpbb3_body #errorpage #content h1 {
+	color: #DF075C;
+}
+
+div#phpbb3_body #errorpage #content h2 {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #CCCCCC;
+	padding-bottom: 5px;
+	color: #333333;
+}
+
+/* Tooltip for permission roles */
+div#phpbb3_body .tooltip {
+	width: 200px;
+	color: #000;
+	text-align: center;
+	border: 1px solid #AAA;
+}
+
+div#phpbb3_body .tooltip span.top {
+	background: #EFEFEF;
+	font-weight: bold;
+	padding: 2px;
+}
+
+div#phpbb3_body .tooltip span.bottom {
+	padding: 5px;
+	color: #000000;
+	background: #FFFFFF;
+}
+
+/*
+ Format Buttons for signature editor
+*/
+div#phpbb3_body #format-buttons {
+	margin: 15px 0 2px 0;
+}
+
+div#phpbb3_body #format-buttons input, div#phpbb3_body #format-buttons select {
+	vertical-align: middle;
+}
+
+/* Nice method for clearing floated blocks without having to insert any extra markup
+	From http://www.positioniseverything.net/easyclearing.html
+.clearfix:after, #tabs:after, .row:after, #content:after, fieldset dl:after, #page-body:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}*/
+
+div#phpbb3_body .clearfix, #tabs, div#phpbb3_body .row, div#phpbb3_body #content, div#phpbb3_body fieldset dl,
+div#phpbb3_body #page-body {
+	height: 1%;
+	overflow: hidden;
+}
+
+/* Syntax Highlighting
+---------------------------------------- */
+div#phpbb3_body .sourcenum {
+	color: gray;
+	font-family: Monaco, 'Courier New', monospace;
+	font-size: 1.25em;
+	font-weight: bold;
+	line-height: 1.20em;
+	text-align: right;
+	padding: 0;
+}
+
+div#phpbb3_body .source {
+	font-family: Monaco, 'Courier New', monospace;
+	font-size: 1.25em;
+	line-height: 1.20em;
+	padding: 0;
+}
+
+div#phpbb3_body .syntaxbg {
+	color: #FFFFFF;
+}
+
+div#phpbb3_body .syntaxcomment {
+	color: #FF8000;
+}
+
+div#phpbb3_body .syntaxdefault {
+	color: #0000BB;
+}
+
+div#phpbb3_body .syntaxhtml {
+	color: #000000;
+}
+
+div#phpbb3_body .syntaxkeyword {
+	color: #007700;
+}
+
+div#phpbb3_body .syntaxstring {
+	color: #DD0000;
+}
+
+/* Permission interface
+---------------------------------------- */
+
+div#phpbb3_body fieldset.permissions legend {
+	text-transform: none;
+}
+
+div#phpbb3_body fieldset.permissions legend input{
+	height: 1.1em;
+}
+
+/* Permission sections */
+div#phpbb3_body fieldset.permissions .permissions-simple {
+	text-align: left;
+	padding-top: 3px;
+}
+
+div#phpbb3_body fieldset.permissions .permissions-advanced {
+	padding: 10px 0 0 5px;
+	vertical-align: top;
+	clear: right;
+}
+
+div#phpbb3_body fieldset.permissions .permissions-switch {
+	float: right;
+}
+
+div#phpbb3_body fieldset.permissions .padding {
+}
+
+div#phpbb3_body .permissions-switch {
+	margin-top: -6px;
+	font-size: .9em;
+}
+
+div#phpbb3_body .permissions-switch a {
+	text-decoration: underline;
+}
+
+div#phpbb3_body .permissions-reset {
+	padding-bottom: 10px;
+}
+
+div#phpbb3_body .permissions-reset a {
+	font-size: .85em;
+}
+
+/* Tabbed menu */
+div#phpbb3_body .permissions-category {
+	line-height: normal;
+	margin: 0 0 -1px 7px;
+	min-width: 570px;
+	font-size: 0.85em;
+}
+
+div#phpbb3_body .permissions-category ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+div#phpbb3_body .permissions-category li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+div#phpbb3_body .permissions-category a {
+	float: left;
+	background: url("../wpbb3/forum/adm/images/bg_tabs_alt1.gif") no-repeat 0% -35px;
+	margin: 0 1px 0 0;
+	padding: 0 0 0 6px;
+	text-decoration: none;
+	position: relative;
+}
+
+div#phpbb3_body .permissions-category a span.tabbg {
+	float: left;
+	display: block;
+	background: url("../wpbb3/forum/adm/images/bg_tabs_alt2.gif") no-repeat 100% -35px;
+	padding: 7px 12px 6px 6px;
+	color: #536482;
+	white-space: nowrap;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+div#phpbb3_body .permissions-category a span.tabbg { float: none;}
+/* End hack */
+
+div#phpbb3_body .permissions-category a:hover span.tabbg {
+	color: #DD6900;
+}
+
+div#phpbb3_body .permissions-category .activetab a {
+	background-position: 0 0;
+}
+
+div#phpbb3_body .permissions-category .activetab a span.tabbg {
+	background-position: 100% 0;
+	padding-bottom: 7px;
+	color: #333333;
+}
+
+div#phpbb3_body .permissions-category a:hover {
+	background-position: 0 -70px;
+}
+
+div#phpbb3_body .permissions-category a:hover span.tabbg {
+	background-position: 100% -70px;
+}
+
+.permissions-category .activetab a:hover span.tabbg {
+	color: #333333;
+	background-position: 100% 0;
+}
+
+div#phpbb3_body .permissions-category .activetab a:hover {
+	background-position: 0 0;
+}
+
+div#phpbb3_body .permissions-category a span.colour {
+	border: 1px solid #536482;
+	display: block;
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px 0 0;
+}
+
+/* Most browsers will have to live with a left aligned icon in RTL mode, as (currently) only Firefox 3.0 Alpha 3 renders it correctly without destroying it
+.rtl .permissions-category a span.colour {
+	float: right;
+	margin: 0 0 0 5px;
+}
+*/
+
+div#phpbb3_body .permissions-category .activetab span.colour {
+	border-color: #333333;
+}
+
+div#phpbb3_body .permissions-category a:hover span.colour {
+	border-color: #DD6900;
+}
+
+div#phpbb3_body .permissions-category .activetab a:hover span.colour {
+	border-color: #333333;
+}
+
+/* Permission preset colours */
+div#phpbb3_body .permissions-preset-yes span.colour,
+div#phpbb3_body .yes {
+	background-color: #86F786;
+}
+
+div#phpbb3_body .permissions-preset-custom span.colour {
+	background-color: #B2BBDD;
+}
+
+div#phpbb3_body .permissions-preset-never span.colour {
+	background-color: #DD0000;
+}
+
+div#phpbb3_body .permissions-preset-no span.colour,
+div#phpbb3_body .never {
+	background-color: #EFB0B2;
+}
+
+/* Permission panel
+---------------------------------------- */
+div#phpbb3_body .permissions-panel {
+	float: left;
+	background-color: #CADCEB;
+	width: 100%;
+}
+
+div#phpbb3_body .permissions-panel span.corners-top {
+	background-image: url("../wpbb3/forum/adm/images/corners_left2.gif");
+}
+
+div#phpbb3_body .permissions-panel span.corners-top span {
+	background-image: url("../wpbb3/forum/adm/images/corners_right2.gif");
+}
+
+div#phpbb3_body .permissions-panel span.corners-bottom {
+	background-image: url("../wpbb3/forum/adm/images/corners_left2.gif");
+}
+
+div#phpbb3_body .permissions-panel span.corners-bottom span {
+	background-image: url("../wpbb3/forum/adm/images/corners_right2.gif");
+}
+
+div#phpbb3_body .permissions-panel span.corners-top, div#phpbb3_body .permissions-panel span.corners-bottom,
+div#phpbb3_body .permissions-panel span.corners-top span, div#phpbb3_body .permissions-panel span.corners-bottom span {
+	font-size: 1px;
+	line-height: 1px;
+	display: block;
+	height: 5px;
+	background-repeat: no-repeat;
+}
+
+div#phpbb3_body .permissions-panel span.corners-top {
+	background-image: url("../wpbb3/forum/adm/images/corners_left2.gif");
+	background-position: 0 0;
+	margin: 0 0;
+}
+
+div#phpbb3_body .permissions-panel span.corners-top span {
+	background-image: url("../wpbb3/forum/adm/images/corners_right2.gif");
+	background-position: 100% 0;
+}
+
+div#phpbb3_body .permissions-panel span.corners-bottom {
+	background-image: url("../wpbb3/forum/adm/images/corners_left2.gif");
+	background-position: 0 100%;
+	margin: 0 0;
+	clear: both;
+}
+
+div#phpbb3_body .permissions-panel span.corners-bottom span {
+	background-image: url("../wpbb3/forum/adm/images/corners_right2.gif");
+	background-position: 100% 100%;
+}
+
+/* Permission table
+---------------------------------------- */
+div#phpbb3_body .permissions-panel .tablewrap {
+	margin: 0 10px;
+}
+
+div#phpbb3_body .permissions-panel table {
+	width: 100%;
+}
+
+div#phpbb3_body .permissions-panel th {
+	text-transform: none;
+}
+
+div#phpbb3_body .permissions-panel th.value {
+	text-align: center;
+}
+
+div#phpbb3_body .permissions-panel th.name {
+	text-align: left;
+	width: auto;
+	text-transform: none;
+}
+
+div#phpbb3_body .rtl .permissions-panel th.name {
+	text-align: right;
+}
+
+div#phpbb3_body .permissions-panel th.permissions-name {
+	border: none;
+	color: #536482;
+	font-weight: normal;
+}
+
+div#phpbb3_body .permissions-panel th.permissions-name a.trace {
+	display: inline;
+}
+
+div#phpbb3_body .permissions-panel th.row3 {
+	background-image: none;
+	background-color: #D1D7DC;
+	color: #536482;
+	border: none;
+}
+
+div#phpbb3_body .permissions-panel th.row4 {
+	background-image: none;
+	background-color: #E4E8EB;
+	color: #536482;
+	border: none;
+}
+
+div#phpbb3_body .permissions-panel th a:link, div#phpbb3_body .permissions-panel th a:hover, div#phpbb3_body .permissions-panel th a:visited {
+	display: block;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+div#phpbb3_body .permissions-panel td.permissions-yes label:hover {
+	background-color: #86F786;
+}
+
+div#phpbb3_body .permissions-panel td.permissions-no label:hover {
+	background-color: #EFB0B2;
+}
+
+div#phpbb3_body .permissions-panel td.permissions-never label:hover {
+	background-color: #DD0000;
+}
+
+div#phpbb3_body .permissions-panel td {
+	padding: 0;
+	text-align: center;
+	width: 10%;
+}
+
+div#phpbb3_body .permissions-panel td label {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+/* Classes for additional tasks
+---------------------------------------- */
+
+div#phpbb3_body .phpinfo {
+	overflow: auto;
+	width: 99%;
+	direction: ltr;
+}
+
+div#phpbb3_body div#phpbb3_body .phpinfo td, div#phpbb3_body .phpinfo th, div#phpbb3_body .phpinfo h2, div#phpbb3_body .phpinfo h1 {
+	text-align: left;
+}

@@ -1,0 +1,33 @@
+#
+# Uncomment the statement below if you want to make use of
+# HTTP authentication and it does not already work.
+# This could be required if you are for example using PHP via Apache CGI.
+#
+#<IfModule mod_rewrite.c>
+#RewriteEngine on
+#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+#</IfModule>
+
+<Files "config.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+<Files "common.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+# WPBB3 SECTION START
+#RewriteEngine on
+#Options +FollowSymlinks
+#Options -indexes
+#RewriteBase /
+
+# forbidden
+#RewriteCond %{QUERY_STRING} !direct=true
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !.*\.(png|jpg|gif|ico|css|js)
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ - [F]
+# WPBB3 SECTION END

@@ -1,0 +1,721 @@
+/* Layout
+ ------------ */
+
+#phpbb_forum * {
+    /* Reset browsers default margin, padding and font sizes */
+    margin: 0;
+    padding: 0;
+    /*font-size: 100%;*/
+    border: 0;
+}
+
+#phpbb_forum {
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	color: #000;
+	background-color: #FFF;
+	font-size: 62.5%; 
+	width:580px;
+	margin:0 auto;
+    position:relative;
+    overflow:hidden;
+}
+
+#phpbb_forum #wrapheader {
+	height: auto !important;
+	padding: 0;
+	
+}
+
+#phpbb_forum #wrapcentre {
+	/*margin: 0;*/
+}
+
+#phpbb_forum #wrapfooter {
+	text-align: center;
+	clear: both;
+}
+
+#phpbb_forum #wrapnav {
+	width: 100%;
+	margin: 0;
+	background-color: #ECECEC;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #A9B8C2;
+}
+
+#phpbb_forum #logodesc {
+	background-color: #C1CAD2;
+    background-image: url('./forum/styles/wordpress/theme/images/background.gif');
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	padding: 0 25px 15px 25px;
+	display:none;  
+}
+
+#phpbb_forum #menubar {
+    margin-top: 25px;
+}
+
+#phpbb_forum #datebar {
+	margin: 3px 0;
+}
+
+#phpbb_forum #findbar {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#phpbb_forum .forumrules {
+	background-color: #F9CC79;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #BB9860;
+	padding: 4px;
+	font-weight: normal;
+	font-size: 1.1em;
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+#phpbb_forum .forumrules h3 {
+	color: red;
+}
+
+#phpbb_forum #pageheader { }
+#phpbb_forum #pagecontent { }
+#phpbb_forum #pagefooter { }
+
+#phpbb_forum #poll { }
+#phpbb_forum #postrow { }
+#phpbb_forum #postdata { }
+
+
+/*  Text
+ --------------------- */
+#phpbb_forum h1 {
+	color: #00008C;
+    display: inline;
+    font-family: sans-serif,Verdana,Arial,Helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    text-decoration: none;
+}
+
+#phpbb_forum h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-decoration: none;
+	line-height: 120%;
+}
+
+#phpbb_forum h3 {
+	font-size: 1.3em;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 120%;
+}
+
+#phpbb_forum h4 {
+	margin: 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#phpbb_forum p {
+	/*font-size: 1.1em;*/
+}
+
+#phpbb_forum p.moderators {
+	margin: 0;
+	float: left;
+	color: black;
+	font-weight: bold;
+}
+
+#phpbb_forum p.linkmcp {
+	margin: 0;
+	float: right;
+	white-space: nowrap;
+	padding-right: 5px;
+}
+
+#phpbb_forum p.breadcrumbs {
+	margin: 0;
+	float: left;
+	color: black;
+	white-space: normal;
+	font-size: 12px;
+	padding:5px 0;
+}
+
+#phpbb_forum p.breadcrumbs a{
+	color:#000;
+	text-decoration:underline;
+}
+
+#phpbb_forum p.datetime {
+	margin: 0;
+	float: right;
+	white-space: nowrap;
+	font-size: 1em;
+}
+
+#phpbb_forum p.searchbar {
+	padding: 0 0 5px;
+	margin: 0;
+	white-space: nowrap;
+} 
+
+#phpbb_forum p.searchbarreg {
+	margin: 0;
+	float: right;
+	white-space: nowrap;
+}
+
+#phpbb_forum p.forumdesc {
+	padding-bottom: 4px;
+}
+
+#phpbb_forum p.topicauthor {
+	margin: 1px 0;
+}
+
+#phpbb_forum p.topicdetails {
+	margin: 1px 0;
+}
+
+#phpbb_forum p.topicdetails a.date{
+	text-decoration:underline;
+}
+
+#phpbb_forum .postreported, #phpbb_forum .postreported a:link,
+#phpbb_forum .postreported a:visited, #phpbb_forum .postreported a:hover,
+#phpbb_forum .postreported a:active {
+	margin: 1px 0;
+	color: #ff0000;
+	font-weight:bold;
+}
+
+#phpbb_forum .postapprove, #phpbb_forum .postapprove a:link, #phpbb_forum .postapprove a:visited,
+#phpbb_forum .postapprove a:hover, #phpbb_forum .postapprove a:active {
+	color: green;
+	font-weight:bold;
+}
+
+#phpbb_forum .postapprove img, #phpbb_forum .postreported img {
+	vertical-align: bottom;
+	padding-top: 5px;
+}
+
+#phpbb_forum .postauthor {
+	color: #000000;
+}
+
+#phpbb_forum .postdetails {
+	color: #000000;
+}
+
+#phpbb_forum .postbody {
+	/*font-size: 1.3em;*/
+	line-height: 1.4em;
+	font-family: "Lucida Grande", "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+#phpbb_forum .postbody li, #phpbb_forum ol, #phpbb_forum ul {
+	margin: 0 0 0 1.5em;
+}
+
+#phpbb_forum .posthilit {
+	background-color: yellow;
+}
+
+#phpbb_forum .nav {
+	margin: 0;
+	color: black;
+	font-weight: bold;
+}
+
+#phpbb_forum .pagination {
+	padding: 4px;
+	color: black;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#phpbb_forum .cattitle {
+
+}
+
+#phpbb_forum .gen {
+	font-size: 12px;
+	text-decoration: underline;
+}
+
+#phpbb_forum .gen, #phpbb_forum .genmed, #phpbb_forum .gensmall {
+    color: #000000;
+    font-family: Sans-Serif,Arial;
+}
+
+#phpbb_forum .genmed {
+	font-size: 11px;
+}
+
+#phpbb_forum .gensmall {
+	margin: 1px 1px;
+	font-size: 11px;
+    text-align: right;
+}
+
+#phpbb_forum .copyright {
+	color: #444;
+	font-weight: normal;
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	display:none;
+}
+
+#phpbb_forum .titles {
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.3em;
+	text-decoration: none;
+}
+
+#phpbb_forum .error {
+	color: red;
+}
+
+/* Tables
+ ------------ */
+#phpbb_forum table{
+    border-spacing:0 1px;
+}
+#phpbb_forum th {
+    background-color: #006699;
+    color: #FFA34F;
+    font-size: 10px;
+	height: 28px;
+    text-align: center;
+    text-transform:capitalize;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing:0;
+}
+
+#phpbb_forum th, #phpbb_forum td {
+    font-family: sans-serif,Verdana,Arial,Helvetica,sans-serif;
+    /*text-align:auto;*/
+    vertical-align:middle;
+    font-size: 12px;
+}
+
+#phpbb_forum .forums-img td {
+	padding:0;
+}
+
+#phpbb_forum td {
+	padding: 2px;
+}
+#phpbb_forum td.profile {
+	padding: 4px;
+}
+
+#phpbb_forum .tablebg {
+    background-color: #A9B8C2;
+    /*border: 1px solid #FFD000;*/
+    border-spacing: 1px 1px;
+}
+
+#phpbb_forum .catdiv {
+	height: 28px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: #ECECEC;
+}
+
+#phpbb_forum .rtl .catdiv {
+	background: white url('./forum/styles/wordpress/theme/images/cellpic2_rtl.jpg') repeat-y scroll top right;
+}
+
+#phpbb_forum .cat {
+	height: 28px;
+	margin: 0;
+	padding: 0;
+	text-indent: 4px;	
+	background-color: #C7D0D7;
+	border: 0;
+}
+
+#phpbb_forum .row1 {
+	background-color: #ECECEC;
+}
+
+#phpbb_forum .row2 {
+	background-color: #DCE1E5;
+    /*text-align: center;*/
+}
+
+#phpbb_forum .row2 td {
+    /*text-align: left;*/
+}
+
+#phpbb_forum .row3 {
+	background-color: #FFF;
+}
+
+#phpbb_forum .spacer {
+	background-color: #D1D7DC;
+}
+
+#phpbb_forum hr {
+	height: 1px;
+	border-width: 0;
+	background-color: #D1D7DC;
+	color: #D1D7DC;
+}
+
+#phpbb_forum .legend {
+	/*text-align:center;*/
+	margin: 0 auto;
+}
+
+/*#phpbb_forum .forumline {
+   background-color: #FFD000;
+    border: 1px solid #FFD000;
+}
+
+#phpbb_forum .forumline .white{
+    background-color: #FFF;
+	padding: 2px 0;
+}
+
+#phpbb_forum .forumline tr{
+	border-bottom:1px solid #FFD000;
+}*/
+
+#phpbb_forum .ftxt {
+    color: #00008C;
+    font-family: Sans-Serif,Arial;
+    font-size: 12px;
+	text-align:center;
+	width:100%;
+}
+
+/* Links
+ ------------ */
+
+/* Links adjustment to correctly display an order of rtl/ltr mixed content */
+#phpbb_forum .rtl a {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/* CSS spec requires a:link, a:visited, a:hover and a:active rules to be specified in this order. */
+/* See http://www.phpbb.com/bugs/phpbb3/59685 */
+#phpbb_forum a:link {
+    color: #006597;
+	text-decoration: none;
+}
+
+#phpbb_forum a:visited {
+	color: #005784;
+	text-decoration: none;
+}
+
+#phpbb_forum a:hover {
+	color: #D46400;
+	text-decoration: underline;
+}
+
+#phpbb_forum a:active {
+	color: #005784;
+	text-decoration: none;
+}
+
+#phpbb_forum a.forumlink {
+	color: #006699;
+	font-weight: bold;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	/*font-size: 1.2em;*/
+}
+
+#phpbb_forum a.topictitle {
+	margin: 1px 0;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	/*font-size: 1.2em;*/
+}
+
+#phpbb_forum a.topictitle:visited {
+	color: #5493B4;
+	text-decoration: none;
+
+}
+
+#phpbb_forum th a, #phpbb_forum th a:visited {
+	color: #000 !important;
+	text-decoration: none;
+}
+
+#phpbb_forum th a:hover {
+	text-decoration: underline;
+}
+
+
+/* Form Elements
+ ------------ */
+#phpbb_forum form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#phpbb_forum input {
+	color: #333333;
+	font-family: "Lucida Grande", Verdana, Helvetica, sans-serif;
+	/*font-size: 1.1em;*/
+	font-weight: normal;
+	padding: 1px;
+	border: 1px solid #A9B8C2;
+	background-color: #FAFAFA;
+    font-size: 11px;
+}
+
+#phpbb_forum textarea {
+	background-color: #FAFAFA;
+	color: #333333;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+	line-height: 1.4em;
+	font-weight: normal;
+	border: 1px solid #A9B8C2;
+	padding: 2px;
+}
+
+#phpbb_forum textarea[name="message"]{
+	max-width:222px;
+}
+
+#phpbb_forum select {
+	color: #333333;
+	background-color: #FAFAFA;
+	font-family: "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+	font-weight: normal;
+	border: 1px solid #A9B8C2;
+	padding: 1px;
+	max-width: 220px;
+    margin: 5px 0;
+}
+
+#phpbb_forum option {
+	padding: 0 1em 0 0;
+}
+
+#phpbb_forum option.disabled-option {
+	color: graytext;
+}
+
+#phpbb_forum input.radio {
+	border: none;
+	background-color: transparent;
+}
+
+#phpbb_forum .post {
+	background-color: white;
+	border-style: solid;
+	border-width: 1px;
+	min-width: 120px;
+	max-width: 295px;
+}
+ 
+
+#phpbb_forum .btnbbcode {
+	color: #000000;
+	font-weight: normal;
+	/*font-size: 1.1em;*/
+	font-family: "Lucida Grande", Verdana, Helvetica, sans-serif;
+	background-color: #EFEFEF;
+	border: 1px solid #666666;
+}
+
+#phpbb_forum .btnmain {
+	font-weight: bold;
+	background-color: #ECECEC;
+	border: 1px solid #A9B8C2;
+	cursor: pointer;
+	padding: 1px 5px;
+	/*font-size: 1.1em;*/
+}
+
+#phpbb_forum .btnlite {
+	font-weight: normal;
+	background-color: #ECECEC;
+	border: 1px solid #A9B8C2;
+	cursor: pointer;
+	padding: 1px 5px;
+	/*font-size: 1.1em;*/
+}
+
+#phpbb_forum .btnfile {
+	font-weight: normal;
+	background-color: #ECECEC;
+	border: 1px solid #A9B8C2;
+	padding: 1px 5px;
+	/*font-size: 1.1em;*/
+}
+
+#phpbb_forum .helpline {
+	background-color: #DEE3E7;
+	border-style: none;
+}
+
+
+/* BBCode
+ ------------ */
+#phpbb_forum .quotetitle, #phpbb_forum .attachtitle {
+	margin: 10px 5px 0 5px;
+	padding: 4px;
+	border-width: 1px 1px 0 1px;
+	border-style: solid;
+	border-color: #A9B8C2;
+	color: #333333;
+	background-color: #A9B8C2;
+	font-size: 0.85em;
+	font-weight: bold;
+}
+
+#phpbb_forum .quotetitle .quotetitle {
+	font-size: 1em;
+}
+
+#phpbb_forum .quotecontent, #phpbb_forum .attachcontent {
+	margin: 0 5px 10px 5px;
+	padding: 5px;
+	border-color: #A9B8C2;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	font-weight: normal;
+	/*font-size: 1em;*/
+	line-height: 1.4em;
+	font-family: "Lucida Grande", "Trebuchet MS", Helvetica, Arial, sans-serif;
+	background-color: #FAFAFA;
+	color: #4B5C77;
+}
+
+#phpbb_forum .attachcontent {
+	font-size: 0.85em;
+}
+
+#phpbb_forum .codetitle {
+	margin: 10px 5px 0 5px;
+	padding: 2px 4px;
+	border-width: 1px 1px 0 1px;
+	border-style: solid;
+	border-color: #A9B8C2;
+	color: #333333;
+	background-color: #A9B8C2;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-size: 0.8em;
+}
+
+#phpbb_forum .codecontent {
+	direction: ltr;
+	margin: 0 5px 10px 5px;
+	padding: 5px;
+	border-color: #A9B8C2;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	font-weight: normal;
+	color: #006600;
+	font-size: 0.85em;
+	font-family: Monaco, 'Courier New', monospace;
+	background-color: #FAFAFA;
+}
+
+#phpbb_forum .syntaxbg {
+	color: #FFFFFF;
+}
+
+#phpbb_forum .syntaxcomment {
+	color: #FF8000;
+}
+
+#phpbb_forum .syntaxdefault {
+	color: #0000BB;
+}
+
+#phpbb_forum .syntaxhtml {
+	color: #000000;
+}
+
+#phpbb_forum .syntaxkeyword {
+	color: #007700;
+}
+
+#phpbb_forum .syntaxstring {
+	color: #DD0000;
+}
+
+
+/* Private messages
+ ------------------ */
+#phpbb_forum .pm_marked_colour {
+	background-color: #000000;
+}
+
+#phpbb_forum .pm_replied_colour {
+	background-color: #A9B8C2;
+}
+
+#phpbb_forum .pm_friend_colour {
+	background-color: #007700;
+}
+
+#phpbb_forum .pm_foe_colour {
+	background-color: #DD0000;
+}
+
+
+/* Misc
+ ------------ */
+#phpbb_forum img {
+	border: none;
+    max-width: 100%;
+}
+
+#phpbb_forum .sep {
+	color: black;
+	background-color: #FFA34F;
+}
+
+#phpbb_forum table.colortable td {
+	padding: 0;
+}
+
+#phpbb_forum pre {
+	font-size: 1.1em;
+	font-family: Monaco, 'Courier New', monospace;
+}
+
+#phpbb_forum .nowrap {
+	white-space: nowrap;
+}
+
+#phpbb_forum .username-coloured {
+	color:#000!important;
+}
+
+#phpbb_forum .post {
+
+    font-size: 12px;
+}
+
+#phpbb_forum table.palette {
+
+    border-spacing: 1px 1px;
+}

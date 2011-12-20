@@ -1,0 +1,171 @@
+<script type="text/javascript">
+// <![CDATA[
+<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+	popup('{UA_POPUP_PM}', 400, 225, '_phpbbprivmsg');
+<!-- ENDIF -->
+
+function popup(url, width, height, name)
+{
+	if (!name)
+	{
+		name = '_popup';
+	}
+
+	window.open(url.replace(/&amp;/g, '&'), name, 'height=' + height + ',resizable=yes,scrollbars=yes,width=' + width);
+	return false;
+}
+
+function jumpto()
+{
+	var page = prompt('{LA_JUMP_PAGE}:', '{ON_PAGE}');
+	var per_page = '{PER_PAGE}';
+	var base_url = '{A_BASE_URL}';
+
+	if (page !== null && !isNaN(page) && page == Math.floor(page) && page > 0)
+	{
+		if (base_url.indexOf('?') == -1)
+		{
+			document.location.href = base_url + '?start=' + ((page - 1) * per_page);
+		}
+		else
+		{
+			document.location.href = base_url.replace(/&amp;/g, '&') + '&start=' + ((page - 1) * per_page);
+		}
+	}
+}
+
+/**
+* Find a member
+*/
+function find_username(url)
+{
+	popup(url, 760, 570, '_usersearch');
+	return false;
+}
+
+/**
+* Mark/unmark checklist
+* id = ID of parent container, name = name prefix, state = state [true/false]
+*/
+function marklist(id, name, state)
+{
+	var parent = document.getElementById(id);
+	if (!parent)
+	{
+		eval('parent = document.' + id);
+	}
+
+	if (!parent)
+	{
+		return;
+	}
+
+	var rb = parent.getElementsByTagName('input');
+	
+	for (var r = 0; r < rb.length; r++)
+	{
+		if (rb[r].name.substr(0, name.length) == name)
+		{
+			rb[r].checked = state;
+		}
+	}
+}
+
+<!-- IF ._file -->
+
+	/**
+	* Play quicktime file by determining it's width/height
+	* from the displayed rectangle area
+	*
+	* Only defined if there is a file block present.
+	*/
+	function play_qt_file(obj)
+	{
+		var rectangle = obj.GetRectangle();
+
+		if (rectangle)
+		{
+			rectangle = rectangle.split(',')
+			var x1 = parseInt(rectangle[0]);
+			var x2 = parseInt(rectangle[2]);
+			var y1 = parseInt(rectangle[1]);
+			var y2 = parseInt(rectangle[3]);
+
+			var width = (x1 < 0) ? (x1 * -1) + x2 : x2 - x1;
+			var height = (y1 < 0) ? (y1 * -1) + y2 : y2 - y1;
+		}
+		else
+		{
+			var width = 200;
+			var height = 0;
+		}
+
+		obj.width = width;
+		obj.height = height + 16;
+
+		obj.SetControllerVisible(true);
+
+		obj.Play();
+	}
+<!-- ENDIF -->
+
+// ]]>
+</script>
+
+<div id="phpbb_forum">
+<a name="top"></a>
+<div id="wrapheader">
+
+	<div id="menubar">
+		<table width="100%" cellspacing="0">
+		<tr>
+			<td class="genmed" style="text-align:left">
+				<!-- IF not S_IS_BOT --><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a>&nbsp;<!-- ENDIF -->
+				<!-- IF U_RESTORE_PERMISSIONS --> &nbsp;<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a><!-- ENDIF -->
+				<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN --> &nbsp;<span style="color: red;">{L_BOARD_DISABLED}</span><!-- ENDIF -->
+				<!-- IF not S_IS_BOT -->
+					<!-- IF S_USER_LOGGED_IN -->
+						<!-- IF S_DISPLAY_PM -->&nbsp;|&nbsp; <a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a><!-- ENDIF -->
+					<!-- ELSEIF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->&nbsp;|&nbsp; <a href="{U_REGISTER}">{L_REGISTER}</a>
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+			</td>
+			<td class="genmed" style="text-align:right">
+				<a href="{U_INDEX}">{L_INDEX}</a>&nbsp;|&nbsp; 
+				<a href="{U_FAQ}">{L_FAQ}</a>
+				<!-- IF S_DISPLAY_SEARCH -->&nbsp;|&nbsp; <a href="{U_SEARCH}">{L_SEARCH}</a><!-- ENDIF -->
+				<!-- IF not S_IS_BOT -->
+					<!-- IF S_DISPLAY_MEMBERLIST --> &nbsp;|&nbsp; <a href="{U_MEMBERLIST}">{L_MEMBERLIST}</a><!-- ENDIF -->
+				<!-- ENDIF -->
+			</td>
+		</tr>
+		</table>
+	</div>
+
+	<div id="datebar">
+		<table width="100%" cellspacing="0">
+		<tr>
+			<!-- IF S_DISPLAY_SEARCH --><td class="gensmall" align="left"><span style="float: {S_CONTENT_FLOW_BEGIN};"><a href="{U_SEARCH_UNANSWERED}">Сообщения без ответов</a></span></td><!-- ENDIF -->
+			<td class="gensmall"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ENDIF --></td>
+			<td class="gensmall" align="{S_CONTENT_FLOW_END}">{CURRENT_TIME}</td>
+		</tr>
+		</table>
+	</div>
+
+</div>
+
+<div id="wrapcentre">
+
+	<!-- IF S_DISPLAY_SEARCH -->
+		
+		<!-- IF S_USER_LOGGED_IN or S_LOAD_UNREADS -->
+		<p class="searchbar">	
+		<span style="float: {S_CONTENT_FLOW_END};"><!-- IF S_LOAD_UNREADS --> <a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- IF S_USER_LOGGED_IN --> | <!-- ENDIF --><!-- ENDIF --><!-- IF S_USER_LOGGED_IN --><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a> | <a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a><!-- ENDIF --></span>
+		</p> <br clear="all" />
+		<!-- ENDIF -->
+		
+	<!-- ENDIF -->
+
+	<!-- //INCLUDE breadcrumbs.html -->
+
+	

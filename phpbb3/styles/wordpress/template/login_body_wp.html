@@ -1,0 +1,39 @@
+<!-- INCLUDE overall_header.html -->
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<!-- IF not S_ADMIN_AUTH -->
+		<th colspan="2">{L_LOGIN}</th>
+	<!-- ELSE -->
+		<th>{LOGIN_EXPLAIN}</th>
+	<!-- ENDIF -->
+</tr>
+<!-- IF LOGIN_EXPLAIN && not S_ADMIN_AUTH -->
+	<tr>
+		<td class="row3" colspan="2" style="text-align:center"><span class="gensmall">{LOGIN_EXPLAIN}</span></td>
+	</tr>
+<!-- ENDIF -->
+<tr><!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
+	<td class="row1" width="50%">
+		<p class="genmed">{L_LOGIN_INFO}</p>
+
+		<p class="genmed" style="text-align:center">
+			<a href="{U_TERMS_USE}">{L_TERMS_USE}</a> | <a href="{U_PRIVACY}">{L_PRIVACY}</a>
+		</p>
+	</td>
+	<!-- ENDIF -->
+	<td <!-- IF not S_ADMIN_AUTH -->class="row2"<!-- ELSE -->class="row1"<!-- ENDIF -->>
+	
+		
+	</td>
+</tr>
+</table>
+
+<br clear="all" />
+
+<!-- INCLUDE breadcrumbs.html -->
+
+<br clear="all" />
+
+<div><!-- INCLUDE jumpbox.html --></div>
+
+<!-- INCLUDE overall_footer.html -->
