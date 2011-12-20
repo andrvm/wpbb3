@@ -88,4 +88,5 @@ else{
         // load forum content
         add_action('init', array($wpbb3_admin, 'last_time_update'));
    }
-}
+
+} // End
