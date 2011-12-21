@@ -37,29 +37,48 @@ class Wpbb3Admin extends Wpbb3 {
      */
     public function update_user_profile_fields($user_id) {
 
-        // change forum's username
-        $this->_db->query("UPDATE `{$this->_db->users}` SET `username` = `display_name`, `username_clean` = `display_name` WHERE `ID` = {$user_id}");
-
-        // check user level
+        // get user data
         $user = get_userdata($user_id);
+
+        // update phpbb username
+        if ( $user->display_name ){
+
+            $name = $this->_db->_real_escape($user->display_name);
+            $this->_db->query("UPDATE `" . self::PHPBB3_TABLE_PREFIX . "users` SET `username` = '{$name}', `username_clean` = '{$name}' WHERE `user_id` = {$user_id}");
+        }
 
         // @TODO: to improve it!
         // delete existing rights
-        $this->_db->query("SELECT * FROM `" . PHPBB3_TABLE_PREFIX . "user_group` WHERE (`group_id` = 4 OR `group_id` = 5) and `user_id` = {$user_id}");
+        $this->_db->query("SELECT * FROM `" . self::PHPBB3_TABLE_PREFIX . "user_group` WHERE (`group_id` = 4 OR `group_id` = 5) and `user_id` = {$user_id}");
 
         if ( $this->_db->num_rows > 0 ){
 
-            $this->_db->query("DELETE FROM `" . PHPBB3_TABLE_PREFIX . "user_group` WHERE (`group_id` = 4 OR `group_id` = 5) and `user_id` = {$user_id}");
+            $this->_db->query("DELETE FROM `" . self::PHPBB3_TABLE_PREFIX . "user_group` WHERE (`group_id` = 4 OR `group_id` = 5) and `user_id` = {$user_id}");
+            $this->_db->query("UPDATE `" . self::PHPBB3_TABLE_PREFIX . "users` SET `user_permissions` = '' WHERE `user_id` = {$user_id}");
         }
 
-        $group = $user->user_level == 7 ? 4 : ($user->user_level == 10 ? 5 : 0);
+        // check user level
+        $group = $user->user_level == 7 ? 4 : ($user->user_level == 10 ? 5 : 2);
 
         // if a moderator or an administrator
         if ( $group == 4 || $group == 5 ){
 
-            $this->_db->query("INSERT INTO `" . PHPBB3_TABLE_PREFIX . "user_group` (`group_id`, `user_id`, `user_pending`) VALUES ({$group}, {$user_id}, 0)");
+            $this->_db->query("INSERT INTO `" . self::PHPBB3_TABLE_PREFIX . "user_group` (`group_id`, `user_id`, `user_pending`) VALUES ({$group}, {$user_id}, 0)");
 
         }
+
+        // update user group
+        $this->_db->query("UPDATE `" . self::PHPBB3_TABLE_PREFIX . "users` SET `group_id` = {$group} WHERE `user_id` = {$user_id}");
+    }
+
+    public function delete_user($user_id){
+
+        // delete phpbb3 user
+        $this->_db->query('DELETE FROM `' . self::PHPBB3_TABLE_PREFIX . "users` WHERE `user_id` = {$user_id}");
+        // delete from user group table
+        $this->_db->query("DELETE FROM `" . self::PHPBB3_TABLE_PREFIX . "user_group` WHERE `user_id`={$user_id}");
+        // update users stat
+        $this->_db->query("UPDATE `" . self::PHPBB3_TABLE_PREFIX . "config` SET `config_value`=`config_value`-1 WHERE `config_name`='num_users'");
     }
 
 } // End Wpbb3Admin Class

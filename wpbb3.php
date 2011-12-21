@@ -76,9 +76,9 @@ else{
     // add hook menu
     add_action('admin_menu', array($wpbb3_admin, 'add_menu'));
     // updating user's info
-    //add_action('profile_update', 'update_user_profile_fields');
+    add_action('profile_update', array($wpbb3_admin, 'update_user_profile_fields'));
     // delete user
-    // ---
+    add_action( 'delete_user', array($wpbb3_admin, 'delete_user'));
 
     // if use phpbb3 menu item
     if ( isset($_GET['page']) && $_GET['page'] == 'phpbb3' ){
