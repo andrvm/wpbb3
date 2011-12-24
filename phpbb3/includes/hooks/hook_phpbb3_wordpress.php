@@ -55,12 +55,17 @@ function wp_phpbb3_append_sid (&$hook, $url, $params = false, $is_amp = true, $s
     // exceptions
 	if ( !$admin ){
 
-        if ( strstr($url, 'cron.php') ){
+        if ( strstr($url, 'cron.php') || strstr($url, 'mode=confirm') ){
             $url = str_replace('./', '', $url);
             return  '/wp-content/plugins/' . WPBB3_PATH_PREFIX . '/' . PHPBB3_PATH_PREFIX . '/' . $url;
         }
 	}
     else{
+
+        if ( strstr($url, 'captcha') ){
+            $url = str_replace('./', '', $url);
+            return  '/wp-content/plugins/' . WPBB3_PATH_PREFIX . '/' . PHPBB3_PATH_PREFIX . '/adm/' . $url;
+        }
 
         $_up = strstr($url, '/../') ? true : false;
     }
