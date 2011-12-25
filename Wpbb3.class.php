@@ -8,7 +8,9 @@
  * @author:			Mamontov Andrey <andrvm@andrvm.ru>
  * @copyright		2011 Mamontov Andrey (andrvm)
  *
- * $Id$
+ * $Id:$
+ * $Date:$
+ * $Author:$
  *
  */
 
