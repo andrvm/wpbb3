@@ -8,6 +8,8 @@
  * @author:			Mamontov Andrey <andrvm@andrvm.ru>
  * @copyright		2011 Mamontov Andrey (andrvm)
  *
+ * $Id$
+ *
  */
 
 class Wpbb3 {
@@ -81,9 +83,9 @@ class Wpbb3 {
         if ( isset($_REQUEST['pview']) && $_SERVER['QUERY_STRING'] ){
 
             $t_     = str_replace('pview=' . $_REQUEST['pview'] . '&', '', $_SERVER['QUERY_STRING']);
-            $t_     = str_replace('pview=' . $_REQUEST['pview'], '', $_SERVER['QUERY_STRING']);
-
+            $t_     = str_replace('pview=' . $_REQUEST['pview'], '', $t_);
             $query  = $_REQUEST['pview'] . '.php?' . $t_;
+
         }
 
         $frame_link = FORUM_PHPBB3_LINK . ($admin ? 'adm/' : '') . $query;
