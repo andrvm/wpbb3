@@ -12,19 +12,24 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !.*\.(png|jpg|gif|ico|css|js)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php
+
 # styles
 RewriteCond %{REQUEST_URI} ^/forum/styles/wordpress
 RewriteRule forum/styles/wordpress/(.*)$ /wp-content/plugins/wpbb3/forum/styles/wordpress/$1
+
 # avatars
 #RewriteCond %{REQUEST_URI} ^/download/file.php
 #RewriteCond %{QUERY_STRING} avatar=([0-9a-z\.]+)
 #RewriteRule download/file.php$ /wp-content/avatars/%1
+
 # icons, smiles and other images
 RewriteCond %{REQUEST_URI} ^/forum/images
 RewriteRule  forum/images/(.*)$ /wp-content/plugins/wpbb3/forum/images/$1
+
 # attachments
 RewriteCond %{QUERY_STRING} pview=file&(.*)
 RewriteRule  ^(.*)$ /wp-content/plugins/wpbb3/forum/download/file.php?%1
+
 # admin images
 RewriteCond %{REQUEST_URI} ^/wp-admin/images
 RewriteCond %{REQUEST_FILENAME} !-f
