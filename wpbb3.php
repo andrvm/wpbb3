@@ -11,7 +11,7 @@
  * Author: Mamontov Andrey <andrvm@andrvm.ru>
  * Author URI: http://andrvm.ru
  *
- * License: A "Slug" license name e.g. GPL2
+ * License: GNU GPL v2.0
 */
 
 /**
