@@ -195,7 +195,7 @@
                    <!-- IF postrow.POSTER_AVATAR -->{postrow.POSTER_AVATAR}<!-- ELSE --><!-- ENDIF -->
                    </div>
                     <div style="float:right; width:75%">
-                        Автор: <b><!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POST_AUTHOR}</a><!-- ENDIF --></b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        Автор: <b><!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POST_AUTHOR}</a><!-- ELSE -->{postrow.POST_AUTHOR}<!-- ENDIF --></b>&nbsp;&nbsp;&nbsp;&nbsp;
                         Дата: <a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a> <b>{postrow.POST_DATE}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <!-- --IF postrow.U_QUOTE -- a href="{postrow.U_QUOTE}">Цитата</a> -- ENDIF --&nbsp;&nbsp;&nbsp;&nbsp; -->
                         <!-- IF postrow.U_PM --><a href="{postrow.U_PM}">Отправить ЛС</a> <!-- ENDIF -->&nbsp;&nbsp;&nbsp;&nbsp;
