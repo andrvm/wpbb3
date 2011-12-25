@@ -67,7 +67,7 @@ function wp_phpbb3_append_sid (&$hook, $url, $params = false, $is_amp = true, $s
             return  '/wp-content/plugins/' . WPBB3_PATH_PREFIX . '/' . PHPBB3_PATH_PREFIX . '/adm/' . $url;
         }
 
-        $_up = strstr($url, '/../') ? true : false;
+        $_up = strstr($url, '/../') && !strstr($url, 'index.php') ? true : false;
     }
 
     // cut relative paths (./, ./../)
