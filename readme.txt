@@ -24,6 +24,6 @@ English
 
 == Changelog ==
 
-= 0.1.0-betta =
+= 0.1.16-betta =
 * The first version
 
