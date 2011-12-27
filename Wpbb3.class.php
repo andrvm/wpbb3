@@ -25,6 +25,10 @@ class Wpbb3 {
     protected $_expiries;
     // user
     protected $_user_id;
+    // forum title
+    protected $_phpbb_page_title = '';
+    // forum content
+    protected $_forum_content = '';
 
     public  function __construct(){
 
@@ -47,9 +51,13 @@ class Wpbb3 {
         $this->_user_id    =  $user_ID ? (int) $user_ID : 0;
     }
 
-    public function loadforum($admin = false){
-
-        $content	= '';
+    /**
+     * Load forum in the $_forum_content
+     *
+     * @param bool $admin   content sign
+     *
+     */
+    protected function _get_forum($admin = false){
 
         $browser	= !empty($_SERVER['HTTP_USER_AGENT'])	? $_SERVER['HTTP_USER_AGENT']	: '';
         $reffer		= !empty($_SERVER['HTTP_REFERER'])		? $_SERVER['HTTP_REFERER']		: '';
@@ -111,16 +119,32 @@ class Wpbb3 {
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
             }
 
-            $content = curl_exec($curl);
+            $this->_forum_content = curl_exec($curl);
+
+            // get forum title
+            preg_match("#<title>(.*)<\/title>#isu", $this->_forum_content, $matches);
+            $this->_phpbb_page_title = isset($matches[1]) ? $matches[1] : '';
+
+            // delete title from content
+            $this->_forum_content = str_replace('<title>' . $this->_phpbb_page_title . '</title>', '', $this->_forum_content);
 
             curl_close ($curl);
 
         }
         else
-            $content =  '<p>Форум временно недоступен.</p>';
+            $this->_forum_content =  '<p>Форум временно недоступен.</p>';
 
-       return $content;
+    }
 
+    /**
+     * Send forum content to wordpress
+     *
+     * @param bool $admin content sign
+     *
+     */
+    public function loadforum($admin = false){
+
+        return ( $this->_forum_content ? $this->_forum_content : $this->_get_forum($admin) );
     }
 
     /**
@@ -232,6 +256,30 @@ class Wpbb3 {
 
         //return $public_query_vars;
         return $public_query_vars;
+    }
+
+    /**
+     * Set new title for wordpress title (from phpbb3)
+     */
+    public function set_title(){
+
+        if ( !$this->_forum_content )  $this->_get_forum();
+
+        return the_title() . ' &raquo; ' . $this->_phpbb_page_title . ' | ';
+
+    }
+
+    /**
+     * Returns a (protected || private) property
+     *
+     * @param   string  property name
+     * @return  mixed   property value; NULL if not found
+     */
+    public function __get($name){
+
+        if( $name == 'text' ) return stripcslashes($this->_text);
+
+        return isset($this->{"_$name"}) ? $this->{"_$name"} : NULL;
     }
 
 } // End Wpbb3 Class

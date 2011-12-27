@@ -24,6 +24,10 @@ English
 
 == Changelog ==
 
+= 0.1.17-0 =
+* Add phpbb page title to the wordpress page title
+
 = 0.1.16-betta =
 * The first version
+
 

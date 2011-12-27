@@ -38,7 +38,7 @@ elseif ( strstr($_SERVER['REQUEST_URI'], 'adm/') && !strstr($_SERVER['QUERY_STRI
 else{
 
     $phpbb_hook->register('append_sid', 'wp_phpbb3_append_sid');
-    $phpbb_hook->register(array('template', 'display'), 'wp_phpbb3_correct_links');
+    $phpbb_hook->register(array('template', 'display'), 'wp_phpbb3_correct_data');
     _files();
 
 }
@@ -95,12 +95,12 @@ function wp_phpbb3_admin_append_sid (&$hook, $url, $params = false, $is_amp = tr
 }
 
 /**
- * A stopper fro phpbb
+ * A stopper for phpbb
  */
-function wp_phpbb3_correct_links(&$hook, $handle, $include_once = true){
+function wp_phpbb3_correct_data(&$hook, $handle, $include_once = true){
 
 	global $template, $user;
-			
+
 	$template->assign_vars(array(
 	
         'U_REGISTER'    	=> '/wp-login.php?action=register',

@@ -6,7 +6,7 @@
  *
  * Description: Wordpress & phpbb3 integration
  *
- * Version: 0.1.16-betta
+ * Version: 0.1.17-0
  *
  * Author: Mamontov Andrey <andrvm@andrvm.ru>
  * Author URI: http://andrvm.ru
@@ -58,7 +58,8 @@ if ( !is_admin() ){
 		add_action('init', array($wpbb3, 'last_time_update'));
         // load forum content
 		add_filter('the_content', array($wpbb3, 'loadforum'));
-
+        // set new page title
+        add_action('wp_title', array($wpbb3, 'set_title'));
 	}
 	
 }
