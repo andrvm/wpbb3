@@ -24,8 +24,9 @@ English
 
 == Changelog ==
 
-= 0.1.17-0 =
+= 0.1.17 =
 * Add phpbb page title to the wordpress page title
+* Fix adding slashes to forum posts
 
 = 0.1.16-betta =
 * The first version

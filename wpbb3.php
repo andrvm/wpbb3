@@ -6,7 +6,7 @@
  *
  * Description: Wordpress & phpbb3 integration
  *
- * Version: 0.1.17-0
+ * Version: 0.1.17
  *
  * Author: Mamontov Andrey <andrvm@andrvm.ru>
  * Author URI: http://andrvm.ru

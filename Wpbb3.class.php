@@ -68,7 +68,10 @@ class Wpbb3 {
 
         // post data
         if ( !empty($_POST) ){
+
             $post = Helpers::flatten_GP_array($_POST);
+            // delete slashes from post data
+            $post = stripslashes_deep($post);
         }
 
         // file upload
