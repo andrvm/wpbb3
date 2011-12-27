@@ -134,6 +134,8 @@ class Wpbb3 {
         else
             $this->_forum_content =  '<p>Форум временно недоступен.</p>';
 
+        return  $this->_forum_content;
+
     }
 
     /**

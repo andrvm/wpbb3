@@ -74,7 +74,7 @@ else{
 
     // wpbb3_admin init
     add_action('init', array($wpbb3_admin, 'init'));
-    // add hook menu
+    // add hook menu and load forum content
     add_action('admin_menu', array($wpbb3_admin, 'add_menu'));
     // updating user's info
     add_action('profile_update', array($wpbb3_admin, 'update_user_profile_fields'));
@@ -86,7 +86,7 @@ else{
 
         // add phpbb3 style
         wp_enqueue_style('phpbb3', get_option('siteurl') . '/wp-content/plugins/' . PLUGIN_NAME . '/' . PLUGIN_NAME . '_admin.css');
-        // load forum content
+        //
         add_action('init', array($wpbb3_admin, 'last_time_update'));
    }
 
