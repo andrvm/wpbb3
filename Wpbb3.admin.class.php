@@ -29,7 +29,7 @@ class Wpbb3Admin extends Wpbb3 {
             wp_die( __('You do not have sufficient permissions to access this page.') );
         }
 
-        echo $this->loadforum(true);
+        echo $this->loadforum();
     }
 
     /**

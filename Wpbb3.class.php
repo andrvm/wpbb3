@@ -54,15 +54,15 @@ class Wpbb3 {
     /**
      * Load forum in the $_forum_content
      *
-     * @param bool $admin   content sign
-     *
      */
-    protected function _get_forum($admin = false){
+    protected function _get_forum(){
 
         $browser	= !empty($_SERVER['HTTP_USER_AGENT'])	? $_SERVER['HTTP_USER_AGENT']	: '';
         $reffer		= !empty($_SERVER['HTTP_REFERER'])		? $_SERVER['HTTP_REFERER']		: '';
 
         $cookie		= self::SESSION_NAME . "={$this->_sid}; " . self::COOKIE_PREFIX . "_u={$this->_user_id}";
+
+        $admin      = is_admin() ? true : false;
 
         $post = array();
 
@@ -143,13 +143,10 @@ class Wpbb3 {
 
     /**
      * Send forum content to wordpress
-     *
-     * @param bool $admin content sign
-     *
      */
-    public function loadforum($admin = false){
+    public function loadforum(){
 
-        return ( $this->_forum_content ? $this->_forum_content : $this->_get_forum($admin) );
+        return ( $this->_forum_content ? $this->_forum_content : $this->_get_forum() );
     }
 
     /**
@@ -254,12 +251,11 @@ class Wpbb3 {
      */
     public function clear($public_query_vars) {
 
-        // TODO: Think about correct removing parameters from $public_query_vars
+        // @TODO: Think about correct removing parameters from $public_query_vars
         // remove from $public_query_vars parameter "p"
         // it's uses in the phpbb3
         unset ($public_query_vars[1]);
 
-        //return $public_query_vars;
         return $public_query_vars;
     }
 
