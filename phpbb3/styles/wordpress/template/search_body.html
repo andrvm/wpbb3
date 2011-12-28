@@ -3,14 +3,17 @@
 <div id="pagecontent">
 
 	<form method="get" action="{S_SEARCH_ACTION}">
-	
+
 	<table class="tablebg" width="100%" cellspacing="1">
-	<tr>
+    <tr>
 		<th colspan="4">{L_SEARCH_QUERY}</th>
 	</tr>
 	<tr>
 		<td class="row1" colspan="2" ><b class="genmed">{L_SEARCH_KEYWORDS}: </b><br /><span class="gensmall">{L_SEARCH_KEYWORDS_EXPLAIN}</span></td>
-		<td class="row2" colspan="2" valign="top"><input type="text" style="width: 300px" class="post" name="keywords" size="30" /><br /><input type="radio" class="radio" name="terms" value="all" checked="checked" /> <span class="genmed">{L_SEARCH_ALL_TERMS}</span><br /><input type="radio" class="radio" name="terms" value="any" /> <span class="genmed">{L_SEARCH_ANY_TERMS}</span></td>
+		<td class="row2" colspan="2" valign="top">
+            <input type="hidden" name="pview" value="search" />
+            <input type="text" style="width: 300px" class="post" name="keywords" size="30" /><br />
+            <input type="radio" class="radio" name="terms" value="all" checked="checked" /> <span class="genmed">{L_SEARCH_ALL_TERMS}</span><br /><input type="radio" class="radio" name="terms" value="any" /> <span class="genmed">{L_SEARCH_ANY_TERMS}</span></td>
 	</tr>
 	<tr>
 		<td class="row1" colspan="2"><b class="genmed">{L_SEARCH_AUTHOR}:</b><br /><span class="gensmall">{L_SEARCH_AUTHOR_EXPLAIN}</span></td>
@@ -20,6 +23,9 @@
 		<td class="row1" colspan="2"><b class="genmed">{L_SEARCH_FORUMS}: </b><br /><span class="gensmall">{L_SEARCH_FORUMS_EXPLAIN}</span></td>
 		<td class="row2" colspan="2"><select name="fid[]" multiple="multiple" size="5">{S_FORUM_OPTIONS}</select></td>
 	</tr>
+    <tr>
+            <td class="cat" colspan="4" style="text-align: center">{S_HIDDEN_FIELDS}<input class="btnmain" name="submit" type="submit" value="{L_SEARCH}" />&nbsp;&nbsp;<input class="btnlite" type="reset" value="{L_RESET}" /></td>
+    </tr>
 	</table>
 	
 	</form>
