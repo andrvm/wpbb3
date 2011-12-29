@@ -78,6 +78,9 @@ function wp_phpbb3_append_sid (&$hook, $url, $params = false, $is_amp = true, $s
     $url = str_replace('?', '&', $url);
     $url = str_replace('&&', '&', $url);
 
+    // processing '#' links
+    $url = preg_replace("#^\#([a-z0-9]+)#isU", $url . "&$1", $url);
+
     if ( $admin && strstr($url, 'page=phpbb3&') )
         $url = str_replace('page=phpbb3&', '', $url);
 
