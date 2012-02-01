@@ -64,7 +64,9 @@ class Wpbb3 {
 
         $admin      = is_admin() ? true : false;
 
-        $post = array();
+        $post = $matches = array();
+
+        $this->_forum_content = '';
 
         // post data
         if ( !empty($_POST) ){
@@ -121,16 +123,25 @@ class Wpbb3 {
             if ( !empty($post) ) {
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
             }
+			
+			curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Length: 0'));
 
             $this->_forum_content = curl_exec($curl);
 
+            // if forum has redirects
+            //preg_match("#{{forum}}(.*){{\/forum}}#isU", $this->_forum_content, $matches);
+
+           // $this->_forum_content =$matches[1];//isset($matches[1]) ? $matches[1] : 'sese';
+            //file_put_contents('1.txt', $this->_forum_content);
+
             // get forum title
-            preg_match("#<title>(.*)<\/title>#isu", $this->_forum_content, $matches);
+            /*$matches = array();
+            preg_match("#<title>(.*)<\/title>#isU", $this->_forum_content, $matches);
             $this->_phpbb_page_title = isset($matches[1]) ? $matches[1] : '';
 
             // delete title from content
             $this->_forum_content = str_replace('<title>' . $this->_phpbb_page_title . '</title>', '', $this->_forum_content);
-
+*/
             curl_close ($curl);
 
         }
