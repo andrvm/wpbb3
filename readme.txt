@@ -4,7 +4,7 @@ Donate link: until none
 Tags: forum, phpbb
 Requires at least: 3.2.1
 Tested up to: 3.3
-Stable tag: 0.1.16-betta
+Stable tag: 0.1.17-betta
 
 Wordpress and phpbb3 integration plugin.
 
@@ -23,6 +23,9 @@ English
     /doc/install_en.html
 
 == Changelog ==
+
+= 0.1.18 =
+* Fix nix server errors: 411 Length Required, 400 Bad Request (add 'Content-Lenght' header)
 
 = 0.1.17 =
 * Add phpbb page title to the wordpress page title
