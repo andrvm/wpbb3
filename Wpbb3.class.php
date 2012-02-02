@@ -119,12 +119,13 @@ class Wpbb3 {
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($curl, CURLOPT_COOKIE, $cookie);
+						
+			curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Length: " . strlen($post)));
 
             if ( !empty($post) ) {
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
             }
 			
-			curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Length: 0'));
 
             $this->_forum_content = curl_exec($curl);
 
