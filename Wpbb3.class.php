@@ -120,7 +120,7 @@ class Wpbb3 {
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($curl, CURLOPT_COOKIE, $cookie);
 						
-			curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Length: " . strlen($post)));
+			curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Length: " . count($post)));
 
             if ( !empty($post) ) {
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
