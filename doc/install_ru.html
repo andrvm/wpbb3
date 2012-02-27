@@ -87,6 +87,12 @@
         <p>4.2 В таблице <strong>phpbb_sessions</strong> для одного юзера должна быть <strong>одна</strong> запись.</p>
 
         <p>Всё, можно приступать к работе :)</p>
+		
+		 <h1>Примечания</h1>
+		 
+		 <p>1. Для сервера ngnix, в случае появления ошибки <strong>411 Length Required</strong> раскомментируйте строчку 
+		 //curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Length: 0')); в Wpbb3.class.php.</p>
+		 
     </div>
 </body>
 </html>

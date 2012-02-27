@@ -67,7 +67,7 @@ class Wpbb3 {
         $post = $matches = array();
 
         $this->_forum_content = '';
-
+	
         // post data
         if ( !empty($_POST) ){
 
@@ -109,7 +109,7 @@ class Wpbb3 {
             $url_delim      = (strpos($frame_link, '?') === false) ? '?' : '&';
             $frame_link    .= !strstr($frame_link, 'sid') ? "{$url_delim}sid={$this->_sid}" : '';
         }
-
+		
         if ( $curl = curl_init() ) {
 
             curl_setopt($curl, CURLOPT_URL, $frame_link);
@@ -119,30 +119,33 @@ class Wpbb3 {
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($curl, CURLOPT_COOKIE, $cookie);
-						
-			curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Length: " . count($post)));
-
+							
             if ( !empty($post) ) {
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
-            }
 			
-
+				curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+            }
+			else{
+				
+				// uncomment for ngnix (if you have "411 Length Required" error)
+				//curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Length: 0'));
+			}
+			
             $this->_forum_content = curl_exec($curl);
+			
+            /* if forum has redirects
+            preg_match("#{{forum}}(.*){{\/forum}}#isU", $this->_forum_content, $matches);
 
-            // if forum has redirects
-            //preg_match("#{{forum}}(.*){{\/forum}}#isU", $this->_forum_content, $matches);
-
-           // $this->_forum_content =$matches[1];//isset($matches[1]) ? $matches[1] : 'sese';
-            //file_put_contents('1.txt', $this->_forum_content);
+            $this->_forum_content =$matches[1];//isset($matches[1]) ? $matches[1] : 'sese';
+            file_put_contents('1.txt', $this->_forum_content);
 
             // get forum title
-            /*$matches = array();
+            $matches = array();
             preg_match("#<title>(.*)<\/title>#isU", $this->_forum_content, $matches);
             $this->_phpbb_page_title = isset($matches[1]) ? $matches[1] : '';
 
             // delete title from content
             $this->_forum_content = str_replace('<title>' . $this->_phpbb_page_title . '</title>', '', $this->_forum_content);
-*/
+			*/
             curl_close ($curl);
 
         }

@@ -3,8 +3,8 @@ Contributors: andrvm (non wordpress' user)
 Donate link: until none
 Tags: forum, phpbb
 Requires at least: 3.2.1
-Tested up to: 3.3
-Stable tag: 0.1.18-betta
+Tested up to: 3.3.1
+Stable tag: 0.1.19-betta
 
 Wordpress and phpbb3 integration plugin.
 
@@ -23,6 +23,9 @@ English
     /doc/install_en.html
 
 == Changelog ==
+
+= 0.1.19 =
+* Add a condition for ngnix servers (if you have "411 Length Required" error)
 
 = 0.1.18 =
 * Fix nix server errors: 411 Length Required, 400 Bad Request (add 'Content-Lenght' header)
