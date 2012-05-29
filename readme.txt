@@ -4,7 +4,7 @@ Donate link: until none
 Tags: forum, phpbb
 Requires at least: 3.2.1
 Tested up to: 3.3.1
-Stable tag: 0.1.19-betta
+Stable tag: 0.1.20-betta
 
 Wordpress and phpbb3 integration plugin.
 
@@ -19,10 +19,12 @@ See plugin doc dir
 Russian
     /doc/install_ru.html
 
-English
-    /doc/install_en.html
-
 == Changelog ==
+
+= 0.1.20 =
+* Fix documentation
+* Delete phpbb function.php file
+* Fix paths to phpbb's images (test)
 
 = 0.1.19 =
 * Add a condition for ngnix servers (if you have "411 Length Required" error)

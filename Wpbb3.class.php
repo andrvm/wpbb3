@@ -6,7 +6,7 @@
  * Description:		Class with hooks for wordpress
  *
  * @author:			Mamontov Andrey <andrvm@andrvm.ru>
- * @copyright		2011 Mamontov Andrey (andrvm)
+ * @copyright		2011-2012 Mamontov Andrey (andrvm)
  *
  */
 
@@ -67,7 +67,7 @@ class Wpbb3 {
         $post = $matches = array();
 
         $this->_forum_content = '';
-	
+
         // post data
         if ( !empty($_POST) ){
 
@@ -109,7 +109,7 @@ class Wpbb3 {
             $url_delim      = (strpos($frame_link, '?') === false) ? '?' : '&';
             $frame_link    .= !strstr($frame_link, 'sid') ? "{$url_delim}sid={$this->_sid}" : '';
         }
-		
+
         if ( $curl = curl_init() ) {
 
             curl_setopt($curl, CURLOPT_URL, $frame_link);
@@ -119,19 +119,27 @@ class Wpbb3 {
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($curl, CURLOPT_COOKIE, $cookie);
-							
+
             if ( !empty($post) ) {
-			
+
 				curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
             }
 			else{
-				
+
 				// uncomment for ngnix (if you have "411 Length Required" error)
 				//curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Length: 0'));
 			}
-			
+
             $this->_forum_content = curl_exec($curl);
-			
+
+			// fix image path
+			if ( !$admin )
+				$this->_forum_content = str_replace('src="./', 'src="' . FORUM_PHPBB3_LINK, $this->_forum_content);
+			else{
+				$this->_forum_content = str_replace('src="images', 'src="' . FORUM_PHPBB3_LINK . 'adm/images', $this->_forum_content);
+				$this->_forum_content = str_replace('src="./', 'src="' . FORUM_PHPBB3_LINK . 'adm/', $this->_forum_content);
+			}
+
             /* if forum has redirects
             preg_match("#{{forum}}(.*){{\/forum}}#isU", $this->_forum_content, $matches);
 
