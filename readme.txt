@@ -4,7 +4,7 @@ Donate link: until none
 Tags: forum, phpbb
 Requires at least: 3.2.1
 Tested up to: 3.3.1
-Stable tag: 0.1.20-betta
+Stable tag: 0.1.22-beta
 
 Wordpress and phpbb3 integration plugin.
 

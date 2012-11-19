@@ -6,7 +6,7 @@
  *
  * Description: Wordpress & phpbb3 integration
  *
- * Version: 0.1.18
+ * Version: 0.1.22-beta
  *
  * Author: Mamontov Andrey <andrvm@andrvm.ru>
  * Author URI: http://andrvm.ru
@@ -23,9 +23,9 @@ define('PHPBB3_PLUGIN_PATH', WP_PLUGIN_DIR . '/wpbb3');
 // path to forum
 define('FORUM_PHPBB3_PATH', PHPBB3_PLUGIN_PATH . '/forum');
 // plugin name
-define('PLUGIN_NAME', 'wpbb3');
+define('PHPBB3_PLUGIN_NAME', 'wpbb3');
 // link to forum
-define('FORUM_PHPBB3_LINK', get_option('siteurl') . '/wp-content/plugins/' . PLUGIN_NAME . '/forum/');
+define('FORUM_PHPBB3_LINK', get_option('siteurl') . '/wp-content/plugins/' . PHPBB3_PLUGIN_NAME . '/forum/');
 // forum page
 define('FORUM_PAGE', '/forum/');
 
@@ -38,9 +38,9 @@ include_once PHPBB3_PLUGIN_PATH . '/Wpbb3.class.php';
 if ( !is_admin() ){
 
     $wpbb3 = new Wpbb3();
-	
+
 	// add phpbb3 style
-	wp_enqueue_style(PLUGIN_NAME, get_option('siteurl') . '/wp-content/plugins/' . PLUGIN_NAME . '/' . PLUGIN_NAME . '.css');
+	wp_enqueue_style(PHPBB3_PLUGIN_NAME, get_option('siteurl') . '/wp-content/plugins/' . PHPBB3_PLUGIN_NAME . '/' . PHPBB3_PLUGIN_NAME . '.css');
     // clear query string
     add_filter('query_vars', array($wpbb3, 'clear'));
     // wpbb3 init
@@ -50,7 +50,7 @@ if ( !is_admin() ){
 	add_action('wp_login',	array($wpbb3, 'login'));
 	add_action('wp_logout', array($wpbb3, 'logout'));
 	add_action('user_register', array($wpbb3, 'register'));
-	
+
 	// get forum's data
 	if ( strstr($_SERVER['REQUEST_URI'], FORUM_PAGE) ){
 
@@ -63,7 +63,7 @@ if ( !is_admin() ){
 	}
 
     unset($wbpp3);
-	
+
 }
 /**
  * Admin section
@@ -87,7 +87,7 @@ else{
     if ( isset($_GET['page']) && $_GET['page'] == 'phpbb3' ){
 
         // add phpbb3 style
-        wp_enqueue_style('phpbb3', get_option('siteurl') . '/wp-content/plugins/' . PLUGIN_NAME . '/' . PLUGIN_NAME . '_admin.css');
+        wp_enqueue_style('phpbb3', get_option('siteurl') . '/wp-content/plugins/' . PHPBB3_PLUGIN_NAME . '/' . PHPBB3_PLUGIN_NAME . '_admin.css');
         //
         add_action('init', array($wpbb3_admin, 'last_time_update'));
    }
